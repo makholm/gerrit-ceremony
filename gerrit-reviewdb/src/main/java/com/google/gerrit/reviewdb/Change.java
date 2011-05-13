@@ -355,6 +355,10 @@ public final class Change {
   @Column(id = 14, notNull = false)
   protected String topic;
 
+  /** Extra info about this change */
+  @Column(id = 15, notNull = false)
+  protected String ceremony;
+
   protected Change() {
   }
 
@@ -467,5 +471,13 @@ public final class Change {
 
   public void setTopic(String topic) {
     this.topic = topic;
+  }
+
+  public String getCeremony() {
+    return ceremony;
+  }
+
+  public void setCeremony(String ceremony) {
+    this.ceremony = ceremony;
   }
 }

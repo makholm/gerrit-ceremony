@@ -28,6 +28,7 @@ public class ChangeInfo {
   protected ProjectInfo project;
   protected String branch;
   protected String topic;
+  protected String ceremony;
   protected boolean starred;
   protected Timestamp lastUpdatedOn;
   protected String sortKey;
@@ -44,6 +45,7 @@ public class ChangeInfo {
     project = new ProjectInfo(c.getProject());
     branch = c.getDest().getShortName();
     topic = c.getTopic();
+    ceremony = c.getCeremony();
     lastUpdatedOn = c.getLastUpdatedOn();
     sortKey = c.getSortKey();
   }
@@ -79,6 +81,15 @@ public class ChangeInfo {
   public String getTopic() {
     return topic;
   }
+
+  public String getCeremony() {
+    return ceremony;
+  }
+
+  public void setCeremony(String c) {
+    ceremony = c;
+  }
+
 
   public boolean isStarred() {
     return starred;
