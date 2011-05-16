@@ -83,6 +83,7 @@ public interface ChangeConstants extends Constants {
   String changeInfoBlockProject();
   String changeInfoBlockBranch();
   String changeInfoBlockTopic();
+  String changeInfoBlockCeremony();
   String changeInfoBlockUploaded();
   String changeInfoBlockUpdated();
   String changeInfoBlockStatus();

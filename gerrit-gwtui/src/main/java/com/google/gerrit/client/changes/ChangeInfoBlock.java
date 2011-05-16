@@ -36,11 +36,12 @@ public class ChangeInfoBlock extends Composite {
   private static final int R_PROJECT = 2;
   private static final int R_BRANCH = 3;
   private static final int R_TOPIC = 4;
-  private static final int R_UPLOADED = 5;
-  private static final int R_UPDATED = 6;
-  private static final int R_STATUS = 7;
-  private static final int R_PERMALINK = 8;
-  private static final int R_CNT = 9;
+  private static final int R_CEREMONY = 5;
+  private static final int R_UPLOADED = 6;
+  private static final int R_UPDATED = 7;
+  private static final int R_STATUS = 8;
+  private static final int R_PERMALINK = 9;
+  private static final int R_CNT = 10;
 
   private final Grid table;
 
@@ -54,6 +55,7 @@ public class ChangeInfoBlock extends Composite {
     initRow(R_PROJECT, Util.C.changeInfoBlockProject());
     initRow(R_BRANCH, Util.C.changeInfoBlockBranch());
     initRow(R_TOPIC, Util.C.changeInfoBlockTopic());
+    initRow(R_CEREMONY, Util.C.changeInfoBlockCeremony());
     initRow(R_UPLOADED, Util.C.changeInfoBlockUploaded());
     initRow(R_UPDATED, Util.C.changeInfoBlockUpdated());
     initRow(R_STATUS, Util.C.changeInfoBlockStatus());
@@ -88,6 +90,7 @@ public class ChangeInfoBlock extends Composite {
         .getProject(), chg.getStatus(), dst.get(), null));
     table.setWidget(R_TOPIC, 1, new BranchLink(chg.getTopic(),
         chg.getProject(), chg.getStatus(), dst.get(), chg.getTopic()));
+    table.setText(R_CEREMONY, 1, chg.getCeremony());
     table.setText(R_UPLOADED, 1, mediumFormat(chg.getCreatedOn()));
     table.setText(R_UPDATED, 1, mediumFormat(chg.getLastUpdatedOn()));
     table.setText(R_STATUS, 1, Util.toLongString(chg.getStatus()));
